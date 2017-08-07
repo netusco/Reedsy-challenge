@@ -1,13 +1,15 @@
 {
-  "name": "datateam",
+  "name": "reedsy-challenge",
   "version": "1.0.0",
-  "description": "",
+  "description": "app challenge for reedsy",
   "main": "index.js",
+  "author": "https://github.com/netusco",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "gulp && gulp nodemon",
+    "clean": "gulp clean",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "./node_modules/bower/bin/bower install"
   },
-  "keywords": [],
-  "author": "",
   "license": "ISC",
   "dependencies": {
     "bluebird": "^3.4.7",
@@ -16,7 +18,6 @@
     "cors": "^2.8.1",
     "express": "^4.14.0",
     "express-validation": "^1.0.1",
-    "joi": "^9.0.4",
     "lodash": "^4.17.4",
     "mongoose": "^4.7.7",
     "morgan": "^1.7.0"
@@ -26,8 +27,9 @@
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-es2015": "^6.18.0",
     "babel-register": "^6.18.0",
+    "bower": "^1.8.0",
     "del": "^2.2.2",
-    "gulp": "^3.9.1",
+    "gulp": "github:gulpjs/gulp#4.0",
     "gulp-babel": "^6.1.2",
     "gulp-load-plugins": "^1.4.0",
     "gulp-newer": "^1.3.0",

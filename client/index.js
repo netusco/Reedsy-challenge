@@ -1,3 +1,3 @@
 (function() {
-    angular.module('chart', []);
+    angular.module('conversion', []);
 })();

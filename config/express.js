@@ -9,7 +9,7 @@ import routes from '../server/routes';
 const app = express();
 
 if(config.env === 'development')
-    app.use(logger('dev'));
+  app.use(logger('dev'));
 
 app.use(express.static(path.join(__dirname, '../client')));
 app.use('/scripts', express.static(path.join(__dirname, '../../bower_components/bootstrap/dist')));

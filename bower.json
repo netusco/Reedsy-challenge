@@ -1,9 +1,10 @@
 {
-  "name": "datateam",
-  "description": "",
+  "name": "reedsy-challenge",
+  "description": "app challenge for reedsy",
   "main": "index.js",
   "authors": [
-    "Ujjawal <11.ujjawal@gmail.com>"
+    "Ujjawal <11.ujjawal@gmail.com>",
+    "https://github.com/netusco"
   ],
   "license": "ISC",
   "homepage": "",
