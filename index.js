@@ -2,11 +2,17 @@ import Promise from 'bluebird';
 import mongoose from 'mongoose';
 import config from './config/env';
 import app from './config/express';
+import Conversion from './server/models/conversion.model'
 
 Promise.promisifyAll(mongoose);
 
-mongoose.connect(config.db, {
-  useMongoClient: true
+mongoose.connect(config.db, { useMongoClient: true })
+.then(() => {
+  // emptying db from conversions
+  Conversion.remove({}, (err) => {
+    if(err) console.log('Error while emptying Conversion collection on db');
+    console.log('Removed any pre-existent Conversions on db');
+  })
 });
 
 mongoose.connection.on('error', () => {

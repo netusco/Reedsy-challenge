@@ -3,6 +3,7 @@ import del from 'del';
 import path from 'path';
 import runSequence from 'run-sequence';
 import gulpLoadPlugins from 'gulp-load-plugins';
+import mocha from 'mocha';
 
 const plugins = gulpLoadPlugins();
 

@@ -1,3 +1,1 @@
-(function() {
-    angular.module('conversion', []);
-})();
+angular.module('conversion', [ 'conversionCtrl' ]);

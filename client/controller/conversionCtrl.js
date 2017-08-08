@@ -1,7 +1,16 @@
-(function(conversion) {
+angular.module('conversionCtrl', [])
 
-  conversion.controller('conversionCtrl', function($scope) {
-    $scope.value = 'Conversions';
-  });
+.controller('mainController', function($scope, $http) {
 
-})(angular.module('conversion'));
+  // find a list of conversions
+  $scope.find = function() {
+
+    $http.get('/api/conversions')
+    .then(function(result) {
+      $scope.conversions = result.data;
+    })
+    .catch(function(err) {
+      console.error('Error getting conversions data: %s', err);
+    });
+  };
+});

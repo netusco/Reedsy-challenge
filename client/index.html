@@ -3,13 +3,44 @@
 <head>
     <title>Conversions</title>
     <link rel="stylesheet" href="/scripts/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="main.css" />
     <script src="/scripts/angular.min.js"></script>
     <script src="index.js"></script>
     <script src="controller/conversionCtrl.js"></script>
 </head>
 <body>
-    <div class="container" ng-controller="conversionCtrl">
-        <h1>{{value}}</h1>
+    <div class="container main_container" ng-controller="mainController" ng-init="find()">
+      <div class="row title_row">
+        <div class="col-xs-3">
+          <h2>Conversions</h2>
+        </div>
+        <div class="col-xs-3">
+        </div>
+        <div class="col-xs-3">
+          <a class="btn btn-default">New PDF Conversion</a>
+        </div>
+        <div class="col-xs-3">
+          <a class="btn btn-default">New HTML Conversion</a>
+        </div>
+      </div>
+      <br /> <br />
+
+      <div class="row history_row">
+        <div class="col-xs-2">Name</div>
+        <div class="col-xs-3 col-xs-offset-4">Created At</div>
+        <div class="col-xs-1 col-xs-offset-less">Type</div>
+        <div class="col-xs-2">Status</div>
+      </div>
+      <br />
+      <div class="conversions" ng-repeat="conversion in conversions">
+        <div class="row conversions_list_row">
+          <div class="col-xs-2">{{conversion.name}}</div>
+          <div class="col-xs-3 col-xs-offset-4">{{conversion.created}}</div>
+          <div class="col-xs-1 col-xs-offset-less">{{conversion.type}}</div>
+          <div class="col-xs-2">{{conversion.state}}</div>
+        </div>
+        <br />
+      </div>
     </div>
 
     <script src="/scripts/jquery.min.js"></script>

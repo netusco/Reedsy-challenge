@@ -1,0 +1,32 @@
+.main_container {
+  margin-top: 20px;
+  width: 940px;
+  .center-block();
+}
+
+.title_row {
+  margin-left: -30px;
+  margin-right: -30px;
+}
+
+.title_row .btn {
+  margin-top: 25px;
+  width: 100%;
+}
+
+.btn-default {
+  /* background-color: #ccc; */
+  /* border-color: #333; */
+  background-color: #e6e6e6;
+  border-color: #8c8c8c;
+}
+
+.btn-default:hover {
+  background-color: #d4d4d4;
+  border-color: #8c8c8c;
+}
+
+.history_row {
+  padding: 20px 0;
+  border: black solid 0.5px;
+}
