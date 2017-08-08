@@ -30,3 +30,27 @@
   padding: 20px 0;
   border: black solid 0.5px;
 }
+
+.col-xs-offset-less {
+  margin-left: -30px;
+  margin-right: 30px;
+}
+
+.type_info {
+  width: 60px;
+  color: #fff;
+  background-color: #555;
+  border-color: #333;
+  display: inline-block;
+  padding: 6px 12px;
+  margin-top: -5px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  text-transform: uppercase;
+}

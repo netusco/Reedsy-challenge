@@ -1,4 +1,4 @@
-import mongoose from 'mongoose'
+import mongoose from 'mongoose';
 
 // Conversion schema
 let ConversionSchema = new mongoose.Schema({

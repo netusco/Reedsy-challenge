@@ -17,10 +17,10 @@
         <div class="col-xs-3">
         </div>
         <div class="col-xs-3">
-          <a class="btn btn-default">New PDF Conversion</a>
+          <a class="btn btn-default" ng-click="createConversion('pdf')">New PDF Conversion</a>
         </div>
         <div class="col-xs-3">
-          <a class="btn btn-default">New HTML Conversion</a>
+          <a class="btn btn-default" ng-click="createConversion('html')">New HTML Conversion</a>
         </div>
       </div>
       <br /> <br />
@@ -34,16 +34,18 @@
       <br />
       <div class="conversions" ng-repeat="conversion in conversions">
         <div class="row conversions_list_row">
-          <div class="col-xs-2">{{conversion.name}}</div>
-          <div class="col-xs-3 col-xs-offset-4">{{conversion.created}}</div>
-          <div class="col-xs-1 col-xs-offset-less">{{conversion.type}}</div>
-          <div class="col-xs-2">{{conversion.state}}</div>
+          <div class="col-xs-2">{{conversion.name}} #{{$index + 1}} </div>
+          <div class="col-xs-3 col-xs-offset-4">{{conversion.created | date:'EEE, MMM d, h:mma'}}</div>
+          <div class="col-xs-1 col-xs-offset-less"><span class="type_info">{{conversion.type}}</span></div>
+          <div class="col-xs-2"><span class="glyphicon" ng-class="getStateIcon(conversion)" aria-hidden="true"></span> {{conversion.state}}</div>
         </div>
         <br />
       </div>
+
     </div>
 
     <script src="/scripts/jquery.min.js"></script>
     <script src="/scripts/js/bootstrap.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
 </body>
 </html>
