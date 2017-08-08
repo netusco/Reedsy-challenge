@@ -23,7 +23,7 @@ export function convert(req, res, next) {
   const conversionLength = (type === 'PDF') ? 100000 : 10000; 
 
   let conversion = new Conversion({
-    name: type,
+    name: req.body.name,
     type: type.toLowerCase()
   });
 
@@ -56,7 +56,7 @@ export function convertFile(type, conversionObj, cb) {
   return conversion.save()
     .then((conversion) => {
       // socket signal to refresh the list of conversions on the browser page
-      updateConversionList();
+      updateConversionList(conversion);
 
       // fake timeout as conversion (10s for html / 100s for pdf)
       // @TODO implement real conversion
@@ -66,7 +66,7 @@ export function convertFile(type, conversionObj, cb) {
         return conversion.save()
           .then((conversion) => {
             // socket signal to refresh the list of conversions on the browser page
-            updateConversionList();
+            updateConversionList(conversion);
             return cb();
           });
       }, conversionLength);

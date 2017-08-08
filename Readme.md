@@ -40,3 +40,5 @@ in the api calls and the fact that I've separated the conversions and the job. S
 with a different order of jobs than conversions. Ex. conversion num 3 might have the job number 4 and so be processed after conversion num 4.
 It didn't find it a big deal to spend more time solving this issue, it can be solved by applying some consistency between the two collections
 or just simply disabling the button until the saved signal of the two collections is received.
+
+UPDATE: for the bonus proposed I've created one directive to create the flash message that hides on certain timeout.

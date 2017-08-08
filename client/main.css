@@ -1,6 +1,6 @@
 .main_container {
-  margin-top: 20px;
-  width: 940px;
+  margin-top: 40px;
+  width: 740px;
   .center-block();
 }
 
@@ -11,12 +11,12 @@
 
 .title_row .btn {
   margin-top: 25px;
-  width: 100%;
+  margin-left: -25px;
+  padding: 6px 20px;
+  border-radius: 2px;
 }
 
 .btn-default {
-  /* background-color: #ccc; */
-  /* border-color: #333; */
   background-color: #e6e6e6;
   border-color: #8c8c8c;
 }
@@ -28,7 +28,8 @@
 
 .history_row {
   padding: 20px 0;
-  border: black solid 0.5px;
+  border: 1px solid #8c8c8c;
+  border-radius: 2px;
 }
 
 .col-xs-offset-less {
@@ -37,20 +38,43 @@
 }
 
 .type_info {
-  width: 60px;
-  color: #fff;
-  background-color: #555;
-  border-color: #333;
-  display: inline-block;
-  padding: 6px 12px;
-  margin-top: -5px;
-  font-size: 12px;
+  font-size: 100%;
   font-weight: 400;
-  line-height: 1.42857143;
-  text-align: center;
-  white-space: nowrap;
+}
+
+.flash-messages {
+  position: absolute;
+  right: 50px;
+  top: 40px;
+}
+
+.flash-message {
+  position: relative;
+  border: 1px solid #8c8c8c;
+  border-radius: 2px;
+  font-size: 11px;
+  margin-bottom: 12px;
+  padding: 10px;
+}
+
+.flash-message:before {
+  position: absolute;
+  content: '';
+  width: 45px;
+  height: 100%;
+  border-right: 1px solid #8c8c8c;
+  left: 0;
+  top: 0;
+}
+
+.f-msg.ng-binding {
+  padding: 0 10px 0 20px;
   vertical-align: middle;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  text-transform: uppercase;
+}
+
+.f-icon {
+  padding: 0 5px;
+  font-size: 17px;
+  text-align: center;
+  vertical-align: middle;
 }

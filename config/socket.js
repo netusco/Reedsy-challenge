@@ -19,8 +19,9 @@ export default (server, agenda) => {
 }
 
 
-export const updateConversionList = () => {
+export const updateConversionList = (conversion) => {
   if(!globalSocket) return console.log('[Websocket] no clients connected to socket.io, impossible to emit updateConversionList signal');
   console.log('[Websocket] emitting signal updateConversionList');
   globalSocket.emit('updateConversionList');
+  globalSocket.emit('updateMsg', conversion);
 }

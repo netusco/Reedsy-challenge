@@ -6,7 +6,8 @@
     <link rel="stylesheet" href="main.css" />
     <script src="/scripts/angular.min.js"></script>
     <script src="index.js"></script>
-    <script src="controller/conversionCtrl.js"></script>
+    <script src="controller/conversion.controller.js"></script>
+    <script src="directive/conversion.directive.js"></script>
 </head>
 <body>
     <div class="container main_container" ng-controller="mainController" ng-init="find()">
@@ -34,14 +35,18 @@
       <br />
       <div class="conversions" ng-repeat="conversion in conversions">
         <div class="row conversions_list_row">
-          <div class="col-xs-2">{{conversion.name}} #{{$index + 1}} </div>
+          <div class="col-xs-2">{{conversion.name}}</div>
           <div class="col-xs-3 col-xs-offset-4">{{conversion.created | date:'EEE, MMM d, h:mma'}}</div>
-          <div class="col-xs-1 col-xs-offset-less"><span class="type_info">{{conversion.type}}</span></div>
+          <div class="col-xs-1 col-xs-offset-less"><span class="label label-default type_info">{{conversion.type}}</span></div>
           <div class="col-xs-2"><span class="glyphicon" ng-class="getStateIcon(conversion)" aria-hidden="true"></span> {{conversion.state}}</div>
         </div>
         <br />
       </div>
-
+      <div class="flash-messages">
+        <div class="flash-message" ng-repeat="msg in updateMsgs">
+          <notification ng-model="msg" timeout="3" on-close="removeMsg(id)"></notification>
+        </div>
+      </div>
     </div>
 
     <script src="/scripts/jquery.min.js"></script>

@@ -1,4 +1,4 @@
-angular.module('conversion', [ 'conversionCtrl' ])
+angular.module('conversion', [ 'conversionCtrl', 'conversionDirective' ])
 
 .factory('socket', socket);
 
