@@ -50,7 +50,7 @@ describe('CONVERSION CONTROLLER INTEGRATION TESTS'.title,() => {
     it('should return a list of conversions on POST /api/conversion call'.it, () => {
       return agent
         .post('/api/conversion')
-        .send({ type: 'pdf' })
+        .send({ type: 'pdf', name: 'PDF #1' })
         .then((res) => {
           expect(res).to.have.status(200)
           expect(res.body).to.be.an('array').to.have.length.of.at.least(3)

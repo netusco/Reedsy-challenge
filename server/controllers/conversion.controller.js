@@ -17,8 +17,8 @@ export function getAll (req, res, next) {
 // create a conversion and adds a convert job to the queue
 export function convert(req, res, next) {
 
+  if(!req.body.type) return res.status(400).send('Error no file type given to convert');
   const type = req.body.type.toUpperCase() || false;
-  if(!type) return res.status(400).json( { message: 'No file type given to convert' });
 
   const conversionLength = (type === 'PDF') ? 100000 : 10000; 
 
@@ -34,7 +34,7 @@ export function convert(req, res, next) {
         .then((conversions) => {
           // adding convert file job to queue
           addToQueue('convert ' + req.body.type + ' file', conversion.toObject());
-          res.status(200).json(conversions);
+          return res.status(200).json(conversions);
         })
         .catch((err) => res.status(400).send('Error retrieving conversions'));
     })
